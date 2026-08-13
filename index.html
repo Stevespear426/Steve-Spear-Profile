@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Kelly Spear — Staff Android Engineer</title>
+    <!-- Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <!-- FontAwesome for guaranteed white icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg: #0d0d0d;
+            --text: #f2f2f2;
+            --text-muted: #888;
+            --accent: #0055ff;
+            --border: #222;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        /* --- HEADER --- */
+        header { margin-bottom: 60px; opacity: 0; transition: opacity 0.5s ease; }
+        header.loaded { opacity: 1; }
+        
+        #avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 400;
+            line-height: 0.85;
+            margin: 0;
+            letter-spacing: -2.5px;
+        }
+
+        .headline {
+            margin-top: 24px;
+            font-size: 1.1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+        }
+
+        #grav-company {
+            color: var(--text);
+            font-weight: 500;
+            padding-left: 12px;
+            border-left: 1px solid var(--border);
+        }
+
+        /* --- SECTIONS --- */
+        section { margin-bottom: 100px; }
+        h2 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+            margin-bottom: 40px;
+        }
+
+        /* --- ABOUT & HIGHLIGHTS --- */
+        .bio-narrative {
+            font-size: 1.25rem;
+            font-weight: 400;
+            max-width: 750px;
+            line-height: 1.6;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .h-item { border-left: 2px solid var(--accent); padding-left: 15px; font-size: 0.95rem; }
+        .h-item strong { display: block; color: var(--text); margin-bottom: 4px; font-weight: 600; }
+
+        /* --- WORK --- */
+        .work-grid { display: grid; gap: 60px; }
+        .work-item { text-decoration: none; color: inherit; display: block; }
+        
+        .work-preview {
+            width: 100%;
+            aspect-ratio: 21 / 9;
+            background: var(--border);
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .work-preview img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0); transition: 0.5s; opacity: 0.7; }
+        .work-item:hover img { transform: scale(1.02); filter: saturate(1); opacity: 1; }
+
+        .work-title { font-size: 1.6rem; font-weight: 500; margin: 0; }
+        .work-desc { font-size: 1rem; color: var(--text-muted); margin-top: 8px; max-width: 650px; }
+
+        /* --- CONNECT (The Working Icon Fix) --- */
+        .social-flex { display: flex; flex-wrap: wrap; gap: 12px; }
+        
+        .social-chip {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text); /* Matches white text color */
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        /* i is the font icon, so it inherits the white color exactly */
+        .social-chip i {
+            font-size: 1.1rem;
+            color: inherit;
+        }
+
+        .social-chip:hover {
+            border-color: var(--text);
+            background: var(--text);
+            color: var(--bg); /* Flips to black text on white background */
+        }
+
+        footer { margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header: Dynamic from Gravatar -->
+        <header id="main-header">
+            <img id="avatar" src="https://www.gravatar.com/avatar/dba3a23dd59ec3e3da3d72f98d6fa284e751f23a0b8533ac85ac25cd26745ec4?s=200" alt="Stephen Spear">
+            <h1 id="grav-name">Stephen Spear</h1>
+            <div class="headline">
+                <span id="grav-title">Principal Software Engineer</span>
+                <span id="grav-company" class="company">Stinger Solutions</span>
+            </div>
+        </header>
+
+        <!-- About: The Narrative -->
+        <section id="about">
+            <h2>The Mission</h2>
+            <div class="bio-narrative">
+                <p>
+                    Highly accomplished Android Engineer with 14 years of experience transitioning from <strong>U.S. Army Special Operations</strong> to high-stakes software architecture.
+                </p>
+                <p>
+                    I apply principles of military precision to engineering and leadership. From core contributions to the <strong>AOKP</strong> community to architecting security-critical VPNs and automotive SDKs, I specialize in modern tech stacks like Jetpack Compose and KMP.
+                </p>
+            </div>
+
+            <div class="highlights">
+                <div class="h-item">
+                    <strong>Technical Leadership</strong>
+                    Leading cross-functional teams and managing teams across multiple countiers and timezones.
+                </div>
+                <div class="h-item">
+                    <strong>Patented Innovation</strong>
+                    Inventor of US Patent 9,098,715: Method and system for exchanging content between applications.
+                </div>
+                <div class="h-item">
+                    <strong>Mobile Security</strong>
+                    Expertise in reverse engineering, mobile VPN architecture, and secure networking.
+                </div>
+                <div class="h-item">
+                    <strong>Military Pedigree</strong>
+                    Special Forces Qualification Course (SFQC) graduate and 18D Medical Sergeant.
+                </div>
+            </div>
+        </section>
+
+        <!-- Work: Case Studies -->
+        <section id="work">
+            <h2>Selected Projects</h2>
+            <div class="work-grid">
+                
+                <a href="https://stevespear426.github.io/Ivy-Webpage/" class="work-item" target="_blank">
+                    <div class="work-preview">
+                        <img src="src/ivy_feature_graphic.png" alt="Ivy">
+                    </div>
+                    <h3 class="work-title">Ivy Sidebar</h3>
+                    <p class="work-desc">A secondary launcher that harkens back to the days of Android custom ROMs. Unlimited custimizability and functionality.</p>
+                </a>
+
+                <a href="https://stevespear426.github.io/Stinger-News-Page/" class="work-item" target="_blank">
+                    <div class="work-preview">
+                        <img src="src/purefeed_feature_graphic.png" alt="PureFeed">
+                    </div>
+                    <h3 class="work-title">PureFeed</h3>
+                    <p class="work-desc">A privacy-first RSS and News App. Engineered using Compose Multiplatform and available on Android, iOS, and Desktops</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Identity: Dynamic Verified Accounts -->
+        <section id="connect">
+            <h2>Contact Me</h2>
+            <div id="social-grid" class="social-flex">
+                <!-- Verified accounts injected here with FontAwesome -->
+            </div>
+        </section>
+
+        <footer>
+            STEPHEN KELLY SPEAR // 14+ YEARS SOFTWARE ENGINEERING EXPERIENCE // U.S. ARMY VETERAN
+        </footer>
+    </div>
+
+    <script>
+        const GRAVATAR_HASH = 'dba3a23dd59ec3e3da3d72f98d6fa284e751f23a0b8533ac85ac25cd26745ec4';
+
+        // Mapping Gravatar's text labels to FontAwesome icon classes
+        const iconMap = {
+            'github': 'fa-brands fa-github',
+            'linkedin': 'fa-brands fa-linkedin-in',
+            'twitter': 'fa-brands fa-x-twitter',
+            'x': 'fa-brands fa-x-twitter',
+            'youtube': 'fa-brands fa-youtube',
+            'threads': 'fa-brands fa-threads',
+            'mastodon': 'fa-brands fa-mastodon'
+        };
+
+        async function init() {
+            try {
+                const response = await fetch(`https://api.gravatar.com/v3/profiles/${GRAVATAR_HASH}`);
+                const data = await response.json();
+
+                // 1. Dynamic Header
+                if (data.display_name) document.getElementById('grav-name').innerText = data.display_name;
+                
+                const titleEl = document.getElementById('grav-title');
+                const compEl = document.getElementById('grav-company');
+
+                if (data.job_title) titleEl.innerText = data.job_title;
+                else titleEl.style.display = 'none';
+
+                if (data.company) {
+                    compEl.innerText = data.company;
+                    if (!data.job_title) compEl.style.border = 'none';
+                } else {
+                    compEl.style.display = 'none';
+                }
+
+                document.getElementById('main-header').classList.add('loaded');
+
+                // 2. Verified Accounts with Mapping to FontAwesome
+                const grid = document.getElementById('social-grid');
+                if (data.verified_accounts) {
+                    data.verified_accounts.forEach(acc => {
+                        const serviceKey = acc.service_label.toLowerCase();
+                        // Get mapped icon or default to link icon
+                        const iconClass = iconMap[serviceKey] || 'fa-solid fa-link';
+                        
+                        const chip = document.createElement('a');
+                        chip.href = acc.url;
+                        chip.target = '_blank';
+                        chip.className = 'social-chip';
+                        
+                        chip.innerHTML = `
+                            <i class="${iconClass}"></i>
+                            <span>${acc.service_label}</span>
+                        `;
+                        grid.appendChild(chip);
+                    });
+                }
+            } catch (error) {
+                console.error("Load failed", error);
+                document.getElementById('main-header').classList.add('loaded');
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>
